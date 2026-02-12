@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Teste</title>
+</head>
+<body>
+    <div class="card">
+        <h1 class="text">Bem vindo!</h1>
+        <input type="text" id="nome" placeholder="Digite seu nome:" class="input">
+        <button id="botao" >Clique aqui</button class="button">
+              <p id="mensagem" class="mensagem"></p>
+    </div>
+
+  <script>
+    let botao = document.getElementById('botao');
+    let mensagem = document.getElementById('mensagem');
+    let inputNome = document.getElementById('nome'); // pega o input
+
+    botao.addEventListener('click', function() {
+        let nome = inputNome.value; 
+
+        if(nome === ""){
+            mensagem.innerText = "Digite seu nome!";
+            mensagem.style.color = "red";
+
+    
+            
+        } else {
+            mensagem.innerText = `Bom dia! ${nome}`;
+            mensagem.style.color = "antiquewhite";
+        }
+
+        mensagem.style.opacity = "1";
+
+      
+        inputNome.value = "";
+        inputNome.focus(); 
+    });
+</script>
+
+</body>
+</html>
